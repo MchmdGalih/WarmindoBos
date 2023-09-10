@@ -106,7 +106,7 @@ export default {
     <div class="list-task row">
       <div v-if="searchQuery !== ''">
         <div v-if="resultQuery.length">
-          <CardItem
+          <ItemCard
             v-for="(task, i) in resultQuery"
             :key="i"
             :task="task"
