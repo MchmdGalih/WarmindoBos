@@ -50,12 +50,12 @@ export default {
     },
 
     resultCategory() {
-      if (this.searchCategory.toLowerCase() === 'all') {
+      if (this.searchCategory.toLowerCase() === 'FullStack') {
         this.searchQuery = ''
         return this.tasks
       } else if (
         this.searchCategory &&
-        this.searchCategory.toLowerCase() !== 'all'
+        this.searchCategory.toLowerCase() !== 'FullStack'
       ) {
         this.searchQuery = ''
         return this.tasks.filter(
@@ -153,7 +153,7 @@ export default {
               type="text"
             />
             <textarea
-              class="form-control border-0 small"
+              class="form-control border-0 smFullStack"
               placeholder="Description"
               rows="3"
             />
