@@ -117,7 +117,7 @@ export default {
       </div>
       <div v-else-if="searchCategory !== ''">
         <div v-if="resultCategory.length">
-          <CardItem
+          <ItemCard
             v-for="(task, i) in resultCategory"
             :key="i"
             :task="task"
@@ -127,7 +127,7 @@ export default {
         <h3 v-else class="text-center mt-5">Catatan tidak ada</h3>
       </div>
       <div v-else>
-        <CardItem
+        <ItemCard
           v-for="(task, i) in tasks"
           :key="i"
           :task="task"
