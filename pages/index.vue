@@ -8,18 +8,21 @@ export default {
       // Daftar task
       tasks: [
         {
+          id: 1,
           title: 'Task 1',
           description: 'ini deskripsi',
           isDone: false,
           category: 'Web',
         },
         {
+          id: 2,
           title: 'Task 2',
           description: 'ini deskripsi 2',
           isDone: false,
           category: 'Backend',
         },
         {
+          id: 3,
           title: 'Task 3',
           description: ' ini deskripsi 3',
           isDone: false,
@@ -63,6 +66,23 @@ export default {
             item.category.toLowerCase() === this.searchCategory.toLowerCase()
         )
       }
+    },
+  },
+  methods: {
+    cancelFromHandler() {
+      this.isCreating = !this.isCreating
+    },
+    submitFromHandler({ title, description, category }) {
+      const newTask = {
+        id: +new Date(),
+        title,
+        description,
+        isDone: false,
+        category,
+      }
+
+      this.tasks.unshift(newTask)
+      this.isCreating = !this.isCreating
     },
   },
 }
@@ -144,29 +164,13 @@ export default {
         @click="isCreating = !isCreating"
         >Add Task</a
       >
-      <div v-else class="add-card">
-        <div class="card mb-2">
-          <div class="card-body d-flex flex-column p-0">
-            <input
-              class="form-control border-0 mb-2"
-              placeholder="Title"
-              type="text"
-            />
-            <textarea
-              class="form-control border-0 smFullStack"
-              placeholder="Description"
-              rows="3"
-            />
-          </div>
-        </div>
-        <div class="button-wrapper d-flex">
-          <button class="btn btn-primary me-2">Save</button>
-          <button
-            class="btn btn-outline-secondary"
-            @click="isCreating = !isCreating"
-          >
-            Cancel
-          </button>
+      <div v-else class="action py-2">
+        <div>
+          <Form
+            :categories="listCategory"
+            @cancel-form="cancelFromHandler"
+            @submit-form="submitFromHandler"
+          />
         </div>
       </div>
     </div>
