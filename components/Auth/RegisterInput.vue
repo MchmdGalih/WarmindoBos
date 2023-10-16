@@ -1,0 +1,68 @@
+<template>
+  <form
+    method="post"
+    @submit.prevent="handleFormSubmit"
+    class="flex flex-col p-5 text-black font-bold w-full"
+  >
+    <h2 class="drop-shadow-xl mb-5 text-3xl">Daftar dulu dong guys!</h2>
+
+    <label class="text-lg">Nama</label>
+    <input
+      id="name"
+      type="text"
+      class="form-control p-2 mb-2 mt-2"
+      placeholder="Masukan Nama Anda"
+      v-model="formData.username"
+    />
+
+    <label class="text-lg">Email</label>
+    <input
+      id="email"
+      type="email"
+      class="form-control p-2 mt-2"
+      placeholder="Masukan Email Anda"
+      v-model="formData.email"
+    />
+    <label class="text-lg mt-2">Password</label>
+    <input
+      id="password"
+      type="password"
+      class="form-control p-2 mt-2"
+      placeholder="Masukan Password Anda"
+      v-model="formData.password"
+    />
+    <p
+      class="mt-4 text-blue-900 cursor-pointer text-sm"
+      @click="handleRegister"
+    >
+      Sudah punya akun kan ka?
+    </p>
+    <button class="w-full bg-white font-bold mt-2 rounded-md p-2" type="submit">
+      Daftar
+    </button>
+  </form>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      formData: {
+        username: '',
+        email: '',
+        password: '',
+      },
+      error: null,
+    }
+  },
+  methods: {
+    handleRegister() {
+      this.$emit('register')
+    },
+
+    handleFormSubmit() {
+      this.$emit('formSubmit', this.formData)
+    },
+  },
+}
+</script>

@@ -16,7 +16,7 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat+Alternates:wght@700&family=Montserrat:wght@300;400;500;600;700&display=swap',
+        href: '"https://fonts.googleapis.com/css2?family=Eczar&family=Poppins:wght@300&family=Raleway:wght@500&display=swap"',
       },
     ],
     script: [
@@ -37,7 +37,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: ['@nuxtjs/fontawesome'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -45,6 +45,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+
+    '@nuxtjs/supabase',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -70,5 +72,19 @@ export default {
         },
       },
     },
+  },
+
+  fontawesome: {
+    component: 'ic',
+    suffix: false,
+    icons: {
+      solid: true,
+      brands: true,
+    },
+  },
+
+  env: {
+    SUPABASE_URL: process.env.SUPABASE_URL,
+    SUPABASE_KEY: process.env.SUPABASE_KEY,
   },
 }

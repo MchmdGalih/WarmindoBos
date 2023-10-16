@@ -8,7 +8,16 @@ module.exports = {
     './nuxt.config.{js,ts}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        logo: ['Eczar', 'sans-serif'],
+        primary: ['Poppins', 'sans-serif'],
+        secondary: ['Raleway', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
+    },
   },
   plugins: [],
 }
