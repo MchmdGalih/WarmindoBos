@@ -23,11 +23,7 @@
 <script>
 import LoginInput from '~/components/Auth/LoginInput.vue'
 import RegisterInput from '~/components/Auth/RegisterInput.vue'
-import { createClient } from '@supabase/supabase-js'
-
-const supabaseUrl = process.env.SUPABASE_URL
-const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey)
+import supabase from '@/utils/supabase'
 export default {
   components: { LoginInput, RegisterInput },
   name: 'auth',

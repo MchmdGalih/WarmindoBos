@@ -1,4 +1,4 @@
-const dataNav = [
+export const dataNav = [
   {
     name: 'Beranda',
     link: '/',
@@ -15,4 +15,20 @@ const dataNav = [
   },
 ]
 
-export default dataNav
+export const cardData = [
+  {
+    ic: ['fas', 'user'],
+    count: 50,
+    title: 'User',
+  },
+  {
+    ic: ['fas', 'cube'],
+    count: 50,
+    title: 'Produk',
+  },
+  {
+    ic: ['fas', 'shop'],
+    count: 50,
+    title: 'Order',
+  },
+]

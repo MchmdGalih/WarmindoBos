@@ -32,7 +32,7 @@
         v-if="token"
         class="w-10 rounded border-2 hover:border-yellow-400"
       >
-        <ic :icon="['fas', 'cart-shopping']" />
+        <ic :icon="['fas', 'clipboard']" />
       </button>
 
       <button @click="handleBars" class="block sm:hidden">
@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import dataNav from '@/utils/navigationData'
+import { dataNav } from '@/utils/navigationData'
 import supabase from '@/utils/supabase'
 
 export default {
